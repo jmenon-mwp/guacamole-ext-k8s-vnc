@@ -3,13 +3,13 @@ name: Build and Release Extension
 on:
   push:
     tags:
-      - 'v*' # Triggers on tags starting with v (e.g., v1.0.0)
+      - 'v*'
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to create the release and upload assets
+      contents: write
 
     steps:
       - name: Checkout code
@@ -22,15 +22,20 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
+      - name: Sync POM version with Tag
+        run: |
+          # Removes the 'v' from the tag (v1.0.1 -> 1.0.1)
+          NEW_VERSION=$(echo "${{ github.ref_name }}" | sed 's/^v//')
+          mvn versions:set -DnewVersion=$NEW_VERSION -DgenerateBackupPoms=false
+
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
       - name: Create GitHub Release
-        id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          # This grabs the .jar file from the target directory
-          files: target/*.jar
+          # Explicitly target the jar that doesn't have "original" in the name
+          files: target/guacamole-ext-k8s-vnc-*.jar
           draft: false
           prerelease: false
           generate_release_notes: true
