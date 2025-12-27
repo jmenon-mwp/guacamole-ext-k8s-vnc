@@ -1,0 +1,12 @@
+{
+    "guacamoleVersion": "1.5.5",
+    "name": "Kubernetes Dynamic VNC Extension",
+    "namespace": "guac-k8s-vnc",
+    "authProviders": [
+        "org.apache.guacamole.auth.k8s.K8sVNCAuthenticationProvider"
+    ],
+    "translations": [
+        "translations/en.json",
+        "translations/en_US.json"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "NAME": "English",
+    "CONNECTION_ATTRIBUTES": {
+        "SECTION_HEADER_K8S_POD_PROVISIONING": "Kubernetes Pod Provisioning (VNC Only)",
+        "FIELD_HEADER_K8S_VNC_ENABLED": "Enable Kubernetes Provisioning",
+        "FIELD_OPTION_K8S_VNC_ENABLED_TRUE": "Enabled",
+        "FIELD_OPTION_K8S_VNC_ENABLED_FALSE": "Disabled",
+        "FIELD_HEADER_K8S_VNC_NAMESPACE": "Kubernetes Namespace",
+        "FIELD_HEADER_K8S_VNC_CPU": "CPU limit (e.g. 1 or 500m)",
+        "FIELD_HEADER_K8S_VNC_MEMORY": "Memory limit (e.g. 2Gi)",
+        "FIELD_HEADER_K8S_VNC_PVC_SIZE": "PVC size (e.g. 5Gi)",
+        "FIELD_HEADER_K8S_VNC_IMAGE": "Container Image (e.g. guacamole-k8s-vnc:latest)",
+        "FIELD_HEADER_K8S_VNC_ENDPOINT": "Kubernetes API Endpoint (URL)",
+        "FIELD_HEADER_K8S_VNC_SKIP_TLS_VERIFY": "Skip TLS Verification",
+        "FIELD_OPTION_K8S_VNC_SKIP_TLS_VERIFY_TRUE": "Yes",
+        "FIELD_OPTION_K8S_VNC_SKIP_TLS_VERIFY_FALSE": "No"
+    }
+}
